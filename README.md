@@ -30,7 +30,7 @@ pip install openai python-dotenv
 |------|-------------|
 | **qwen.py** | Chat completion with **Qwen3-30B-A3B-Thinking**. Sends a simple "Hello!" and prints the reply. |
 | **embeding_qwen_alibaba.py** | **Embeddings** with **Alibaba-NLP/gte-Qwen2-7B-instruct**. Gets a vector for the input text and prints its length. |
-| **oss.py** | Chat completion with **voxtral-mini-2602**. Sends "Hello!" and prints the reply. |
+| **oss.py** | Chat completion with **gpt-oss-120b**. Sends "Hello!" and prints the reply. |
 | **ocr.py** | **Image OCR** with **deepseek-ocr**. Encodes a local image (e.g. `image4.jpg`) as base64, sends it with the prompt "Free OCR.", and prints the extracted text and response time. |
 
 All scripts use:
