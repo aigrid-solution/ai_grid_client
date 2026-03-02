@@ -9,11 +9,10 @@ client = OpenAI(
     api_key=AI_GRID_KEY,
 )
 
-response = client.chat.completions.create(
-    model="Qwen3-30B-A3B-Thinking",
-    messages=[
-        {"role": "user", "content": "Hello!"}
-    ]
+response = client.embeddings.create(
+    model="Alibaba-NLP/gte-Qwen2-7B-instruct",
+    input="Explain what embeddings are."
 )
 
-print(response.choices[0].message.content)
+embedding = response.data[0].embedding
+print("Embedding length:", len(embedding))
