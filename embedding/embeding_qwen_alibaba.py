@@ -3,11 +3,12 @@ Embeddings using the configured embedding model (OpenAI-compatible endpoint).
 Configuration via .env: AI_GRID_KEY, BASE_URL, EMBEDDING_MODEL.
 """
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 AI_GRID_KEY = os.getenv("AI_GRID_KEY")
 BASE_URL = os.getenv("BASE_URL")

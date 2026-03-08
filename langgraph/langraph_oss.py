@@ -5,6 +5,7 @@ Flow: user message -> generate (LLM) -> [conditional] -> refine (LLM) or end -> 
 Reads BASE_URL, AI_GRID_KEY, OSS_MODEL from .env.
 """
 import os
+from pathlib import Path
 from typing import Annotated, Literal, TypedDict
 
 from dotenv import load_dotenv
@@ -13,7 +14,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 AI_GRID_KEY = os.getenv("AI_GRID_KEY")
 BASE_URL = os.getenv("BASE_URL")

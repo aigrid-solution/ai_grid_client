@@ -15,7 +15,7 @@ from openai import OpenAI
 from pdf2image import convert_from_path
 from PIL import Image
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 BASE_URL = os.getenv("BASE_URL")
 API_KEY = os.getenv("AI_GRID_KEY")

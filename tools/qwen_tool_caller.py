@@ -4,10 +4,11 @@ Configuration via .env: AI_GRID_KEY, AI_GRID_BASE_URL, AI_GRID_TOOL_MODEL.
 """
 import asyncio
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 AI_GRID_KEY = os.getenv("AI_GRID_KEY")
 BASE_URL = os.getenv("AI_GRID_BASE_URL")
 MODEL = os.getenv("AI_GRID_TOOL_MODEL")

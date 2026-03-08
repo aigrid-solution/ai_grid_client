@@ -13,10 +13,11 @@ import sys
 import librosa
 import numpy as np
 import websockets
+from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 
 def audio_to_pcm16_base64(audio_path: str) -> str:
